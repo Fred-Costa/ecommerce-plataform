@@ -22,14 +22,14 @@ This platform simulates a modern e-commerce system where each domain (products, 
 
 ```bash
 ecommerce-platform/
-├── docker-compose.yaml             # Runs PostgreSQL + product-service
+├── docker-compose.yaml             
 ├── services/
-│   └── product-service/            # Spring Boot microservice for product management
+│   └── product-service/           
 │       ├── Dockerfile
 │       └── src/main/resources/
 │           ├── application.properties
 │           └── application-docker.properties
-└── infrastructure/                 # (Kubernetes, Terraform, CI/CD to be added later)
+└── infrastructure/                 
 ```
 
 ---
