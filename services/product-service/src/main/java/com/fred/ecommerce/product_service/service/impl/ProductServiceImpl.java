@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -28,7 +28,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductDTO> findAll() {
-        return List.of();
+        return productRepository.findAll().stream().map(mapper::toDTO).collect(Collectors.toList());
     }
 
     @Override
@@ -44,7 +44,16 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductDTO update(Long id, ProductDTO dto) {
-        return null;
+
+        Product existing = productRepository.findById(id).orElseThrow();
+
+        existing.setName(dto.getName());
+        existing.setPrice(dto.getPrice());
+        existing.setDescription(dto.getDescription());
+        existing.setImageURL(dto.getImageURL());
+
+        return mapper.toDTO(productRepository.save(existing));
+
     }
 
     @Override
