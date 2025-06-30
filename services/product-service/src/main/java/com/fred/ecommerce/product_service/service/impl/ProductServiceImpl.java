@@ -16,9 +16,9 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
 
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
 
-    private ProductMapper mapper;
+    private final ProductMapper mapper;
 
     @Override
     public ProductDTO create(ProductDTO dto) {
