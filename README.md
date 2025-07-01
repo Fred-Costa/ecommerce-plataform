@@ -72,7 +72,7 @@ ecommerce-platform/
 
 - [x] Spring Boot setup with Docker
 - [x] PostgreSQL integration
-- [ ] REST endpoints for product service
+- [x] REST endpoints for product service
 - [ ] Swagger documentation
 - [ ] CI/CD pipeline (CodePipeline)
 - [ ] Deploy to AWS EKS
